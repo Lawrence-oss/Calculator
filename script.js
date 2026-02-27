@@ -13,4 +13,8 @@ buttonsElement.addEventListener("click", (event) => {
     calcResults = calcResults + event.target.dataset.value;
     displayElement.textContent = calcResults;
   }
+  else if (event.target.id === "equals") {
+    let result = eval(calcResults);
+    displayElement.textContent = result;
+  }
 });
