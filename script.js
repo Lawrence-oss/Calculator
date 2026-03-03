@@ -14,7 +14,13 @@ buttonsElement.addEventListener("click", (event) => {
     displayElement.textContent = calcResults;
   }
   else if (event.target.id === "equals") {
-    let result = eval(calcResults);
-    displayElement.textContent = result;
+    try {
+      let result = eval(calcResults);
+      displayElement.textContent = result;
+      calcResults = result;
+    } catch (err) {
+      displayElement.textContent = "invalid";
+      calcResults = "";
+    }
   }
 });
